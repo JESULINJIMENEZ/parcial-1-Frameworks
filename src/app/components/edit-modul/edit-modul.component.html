@@ -1,0 +1,42 @@
+<div class="card-body">
+    <h5 class="card-title">EDITAR MODULO</h5>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name_modul">Nombre</label>
+            <input type="text" id="name_modul" class="form-control" [(ngModel)]="modul.name_modul" name="name_modul"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="imageUrl_modul">Imagen URL</label>
+            <input type="text" id="imageUrl_modul" class="form-control" [(ngModel)]="modul.imageUrl_modul"
+                name="imageUrl_modul" required>
+        </div>
+        <div class="form-group">
+            <label for="teacher_modul">Docente</label>
+            <input type="text" id="teacher_modul" class="form-control" [(ngModel)]="modul.teacher_modul"
+                name="teacher_modul" required>
+        </div>
+        <div class="form-group">
+            <label for="numberStudents_modul">Número de Estudiantes</label>
+            <input type="number" id="numberStudents_modul" class="form-control" [(ngModel)]="modul.numberStudents_modul"
+                name="numberStudents_modul" required>
+        </div>
+        <div class="form-group">
+            <label for="description_modul">Descripción</label>
+            <textarea id="description_modul" class="form-control" [(ngModel)]="modul.description_modul"
+                name="description_modul" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="dateStart_modul">Fecha de Inicio</label>
+            <input type="date" id="dateStart_modul" class="form-control" [(ngModel)]="modul.dateStart_modul"
+                name="dateStart_modul" required>
+        </div>
+        <div class="form-group">
+            <label for="dateEnd_modul">Fecha de Finalización</label>
+            <input type="date" id="dateEnd_modul" class="form-control" [(ngModel)]="modul.dateEnd_modul"
+                name="dateEnd_modul" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar Módulo</button>
+    </form>
+</div>

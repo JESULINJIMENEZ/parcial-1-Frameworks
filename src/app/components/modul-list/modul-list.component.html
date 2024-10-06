@@ -1,0 +1,22 @@
+<h1>Mis Módulos</h1>
+
+<div class="row mb-3">
+    <div class="col-6">
+        <input type="text" class="form-control" placeholder="Buscar módulos..." [(ngModel)]="searchText"
+            (input)="applyFilter()">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let modul of filteredModuls">
+                <app-modul-item [modul]="modul" (editModul)="onEdit($event)" (deleteModul)="onDelete($event)">
+                </app-modul-item>
+            </li>
+            <li class="list-group-item" *ngIf="filteredModuls.length === 0">
+                No se encontraron módulos.
+            </li>
+        </ul>
+    </div>
+</div>

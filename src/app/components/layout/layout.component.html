@@ -1,0 +1,16 @@
+<app-navbar (showAddModulEvent)="showAddModul()" (showModulListEvent)="showModulList()"></app-navbar>
+
+<div class="container mt-4">
+    <div *ngIf="isAdding">
+        <app-add-modul (addModul)="addModul($event)"></app-add-modul>
+    </div>
+
+    <div *ngIf="isEditing && selectedModul">
+        <app-edit-modul [modul]="selectedModul" (updateModul)="updateModul($event)"></app-edit-modul>
+    </div>
+
+    <div *ngIf="!isAdding && !isEditing">
+        <app-modul-list [moduls]="moduls" (editModul)="editModul($event)"
+            (deleteModul)="deleteModul($event)"></app-modul-list>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="d-flex align-items-start">
+    <div class="me-3" style="flex: 1;">
+        <img [src]="modul.imageUrl_modul" class="card-img-top" style="width: 100%; height: auto;" />
+    </div>
+    <div style="flex: 2;">
+        <h5>{{ modul.name_modul }}</h5>
+        <p><strong>Docente:</strong> {{ modul.teacher_modul }}</p>
+        <p><strong>Número de Estudiantes:</strong> {{ modul.numberStudents_modul }}</p>
+        <p><strong>Descripción:</strong> {{ modul.description_modul }}</p>
+        <p><strong>Fecha de Inicio:</strong> {{ modul.dateStart_modul | date }}</p>
+        <p><strong>Fecha de Finalización:</strong> {{ modul.dateEnd_modul | date }}</p>
+        <p><strong>Tipo:</strong> {{ modul.type_modul }}</p>
+        <button class="btn btn-primary btn-sm me-2" (click)="onEdit()">Editar</button>
+        <button class="btn btn-danger btn-sm" (click)="onDelete()">Eliminar</button>
+    </div>
+</div>

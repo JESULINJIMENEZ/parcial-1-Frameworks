@@ -1,0 +1,78 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">AGREGAR NUEVO MÓDULO</h5>
+        <form #addModulForm="ngForm" (ngSubmit)="onSubmit(addModulForm)" novalidate>
+            <div class="form-group">
+                <label for="name_modul">Nombre</label>
+                <input type="text" id="name_modul" class="form-control" [(ngModel)]="newModul.name_modul"
+                    name="name_modul" placeholder="Ej. Desarrollo Web" required pattern="[^\s].*">
+                <div *ngIf="addModulForm.controls['name_modul'].invalid && (addModulForm.controls['name_modul'].dirty || addModulForm.controls['name_modul'].touched)">
+                    <small class="text-danger" *ngIf="addModulForm.controls['name_modul'].errors">Este campo es obligatorio.</small>
+                    <small class="text-danger" *ngIf="addModulForm.controls['name_modul'].errors">No se permiten espacios en blanco.</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="imageUrl_modul">Imagen URL</label>
+                <input type="text" id="imageUrl_modul" class="form-control" [(ngModel)]="newModul.imageUrl_modul"
+                    name="imageUrl_modul" placeholder="Ej. https://example.com/imagen.png" required pattern="[^\s]+.*">
+                <div *ngIf="addModulForm.controls['imageUrl_modul'].invalid && (addModulForm.controls['imageUrl_modul'].dirty || addModulForm.controls['imageUrl_modul'].touched)">
+                    <small class="text-danger" *ngIf="addModulForm.controls['imageUrl_modul'].errors">Este campo es obligatorio.</small>
+                    <small class="text-danger" *ngIf="addModulForm.controls['imageUrl_modul'].errors">No se permiten espacios en blanco.</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="teacher_modul">Docente</label>
+                <input type="text" id="teacher_modul" class="form-control" [(ngModel)]="newModul.teacher_modul"
+                    name="teacher_modul" placeholder="Ej. Juan Pérez" required pattern="[^\s]+.*">
+                <div *ngIf="addModulForm.controls['teacher_modul'].invalid && (addModulForm.controls['teacher_modul'].dirty || addModulForm.controls['teacher_modul'].touched)">
+                    <small class="text-danger" *ngIf="addModulForm.controls['teacher_modul'].errors">Este campo es obligatorio.</small>
+                    <small class="text-danger" *ngIf="addModulForm.controls['teacher_modul'].errors">No se permiten espacios en blanco.</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="numberStudents_modul">Número de Estudiantes</label>
+                <input type="number" id="numberStudents_modul" class="form-control"
+                    [(ngModel)]="newModul.numberStudents_modul" name="numberStudents_modul" placeholder="Ej. 30" required>
+                <div *ngIf="addModulForm.controls['numberStudents_modul'].invalid && (addModulForm.controls['numberStudents_modul'].dirty || addModulForm.controls['numberStudents_modul'].touched)">
+                    <small class="text-danger" *ngIf="addModulForm.controls['numberStudents_modul'].errors">Este campo es obligatorio.</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="description_modul">Descripción</label>
+                <textarea id="description_modul" class="form-control" [(ngModel)]="newModul.description_modul"
+                    name="description_modul" placeholder="Descripción del módulo aquí..." required pattern="[^\s]+.*"></textarea>
+                <div *ngIf="addModulForm.controls['description_modul'].invalid && (addModulForm.controls['description_modul'].dirty || addModulForm.controls['description_modul'].touched)">
+                    <small class="text-danger" *ngIf="addModulForm.controls['description_modul'].errors">Este campo es obligatorio.</small>
+                    <small class="text-danger" *ngIf="addModulForm.controls['description_modul'].errors">No se permiten espacios en blanco.</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dateStart_modul">Fecha de Inicio</label>
+                <input type="date" id="dateStart_modul" class="form-control" [(ngModel)]="newModul.dateStart_modul"
+                    name="dateStart_modul" required>
+                <div *ngIf="addModulForm.controls['dateStart_modul'].invalid && (addModulForm.controls['dateStart_modul'].dirty || addModulForm.controls['dateStart_modul'].touched)">
+                    <small class="text-danger" *ngIf="addModulForm.controls['dateStart_modul'].errors">Este campo es obligatorio.</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dateEnd_modul">Fecha de Finalización</label>
+                <input type="date" id="dateEnd_modul" class="form-control" [(ngModel)]="newModul.dateEnd_modul"
+                    name="dateEnd_modul" required>
+                <div *ngIf="addModulForm.controls['dateEnd_modul'].invalid && (addModulForm.controls['dateEnd_modul'].dirty || addModulForm.controls['dateEnd_modul'].touched)">
+                    <small class="text-danger" *ngIf="addModulForm.controls['dateEnd_modul'].errors">Este campo es obligatorio.</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="type_modul">Tipo</label>
+                <input type="text" id="type_modul" class="form-control" [(ngModel)]="newModul.type_modul"
+                    name="type_modul" required pattern="[^\s]+.*" placeholder="Ej. Programación, Diseño">
+                <div *ngIf="addModulForm.controls['type_modul'].invalid && (addModulForm.controls['type_modul'].dirty || addModulForm.controls['type_modul'].touched)">
+                    <small class="text-danger" *ngIf="addModulForm.controls['type_modul'].errors">Este campo es obligatorio.</small>
+                    <small class="text-danger" *ngIf="addModulForm.controls['type_modul'].errors">No se permiten espacios en blanco.</small>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Añadir Módulo</button>
+        </form>
+    </div>
+</div>
